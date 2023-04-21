@@ -1,0 +1,41 @@
+﻿<Window x:Class="ProgramB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgramB" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="ProgramB" Height="450" Width="800">
+    <Grid Margin="20">
+        <StackPanel Orientation="Horizontal">
+            <ListBox x:Name="List" Width="500" HorizontalAlignment="Left">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="Name" Text="{Binding Name}" Width="60"/>
+                            <TextBlock x:Name="Sex" Text="{Binding Sex}" Width="60"/>
+                            <TextBlock x:Name="Age" Text="{Binding Age}" Width="20"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Vertical" Margin="10,0" Width="230">
+                <Grid Height="30">
+                    <Button x:Name="btn" Content="Get RemoteObject" Click="GetRemoteObject"/>
+                </Grid>
+                <Line Height="10"/>
+                <Grid Height="30">
+                    <Button Name="btn0" Content="Get Persons" Click="GetPersons" IsEnabled="False"/>
+                </Grid>
+                <Line Height="10"/>
+                <Grid Height="30">
+                    <Button Name="btn1" Content="Add Persons" Click="AddPersons" IsEnabled="False"/>
+                </Grid>
+                <Line Height="10"/>
+                <Grid Height="30">
+                    <Button Name="btn2" Content="Clear All" Click="Clear" IsEnabled="False"/>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
